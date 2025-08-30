@@ -24,7 +24,7 @@ local skeletonDrawings = {}
 local espEnabled      = true
 local aimbotEnabled   = false
 local AIMBOT_FOV       = 40
-local SMOOTHING_FACTOR = 0  -- Now ranges from 0 to 5
+local SMOOTHING_FACTOR = 0  
 local skeletonColor    = Color3.new(1,1,1)
 
 local rgbSliders = {}
@@ -164,15 +164,15 @@ local function aimAt(target)
     local mpos = Input:GetMouseLocation()
     
     if SMOOTHING_FACTOR == 0 then
-        -- No smoothing - instant lock
+        
         local delta = targetPos - mpos
         mousemoverel(delta.X, delta.Y)
         lastAimPosition = nil
     else
-        -- Convert SMOOTHING_FACTOR (0-5) to actual smoothing strength (0.01-0.5)
+        
         local actualSmoothing = 0.01 + (SMOOTHING_FACTOR / 5) * 0.49
         
-        -- Apply smoothing with exponential interpolation
+       
         if not lastAimPosition then
             lastAimPosition = mpos
         end
