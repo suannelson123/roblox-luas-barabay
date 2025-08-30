@@ -107,7 +107,4 @@ RunService.Heartbeat:Connect(function()
         end
     end
 end)
-
-print("[REM v1.2] Aimbot Script loaded successfully!")
-print("Targeting 1 variables")
 print("Hold RMB to aim!")
