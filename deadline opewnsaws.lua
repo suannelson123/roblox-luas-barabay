@@ -223,7 +223,7 @@ title.BackgroundTransparency = 1
 title.Font             = Enum.Font.SourceSansBold
 title.TextSize         = 18
 title.TextColor3       = Color3.new(1,1,1)
-title.Text             = "Godlys Cheat"
+title.Text             = "BISAKOL MODE"
 title.Parent           = bar
 
 local dragging, dragInput, dragStart, startPos
