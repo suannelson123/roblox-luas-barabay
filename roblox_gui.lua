@@ -1,3 +1,5 @@
+-- credits to andrey for the loadstring script i only made the Gui
+
 local function sendNotification(title, text, duration)
     local bindableFunction = Instance.new("BindableFunction")
 
@@ -58,7 +60,6 @@ local cartr = Instance.new("ImageLabel")
 
 local TweenService = game:GetService("TweenService")
 
--- Theme
 local winter = false
 title.Text = "Sigma.Aim"
 
@@ -102,7 +103,6 @@ if winter == true then
     title.Text = "❄ SIGMA AIM ❄"
 end
 
--- aimbot need this
 local Camera = workspace.CurrentCamera
 local UserInputService = game:GetService('UserInputService')
 local Players = game:GetService('Players')
@@ -768,7 +768,7 @@ Fire = hookfunction(Client.Bullet.Fire, function(self, ...)
     return Fire(self, unpack(args))
 end)
 
-local script = Instance.new("LocalScript", sigma) -- idk, just a script. whyyy ??? idk
+local script = Instance.new("LocalScript", sigma)
 
 function genrandstr(length)
     local charset =
@@ -839,7 +839,7 @@ local function splash()
     end
 end
 
--- <!-- Shutdown --!> --
+
 local function shutdown()
     main:Destroy()
 
@@ -1021,33 +1021,6 @@ idk.MouseButton1Click:Connect(function()
     end
 end)
 
---[[
-pivo.MouseButton1Click:Connect(function()
-gradient_color_main = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.46, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.77, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.92, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.95, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.98, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.99, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(56, 11, 56))}
-gradient_bord = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(140, 74, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(238, 106, 255))}
-bcolor = Color3.fromRGB(94, 63, 103)
-
-sendNotification("Sigma", "Old Theme applyed, but this bug with buttons animation... ahh now 2 AM (2:00), i need to sleep.. sorry", 10)
-
-UIGradient.Color = gradient_color_main
-local uigradientss = {
-    uigradient_1,
-    uigradient_2,
-    uigradient_3,
-    uigradient_4,
-    uigradient_5,
-    uigradient_6
-}
-
-for _, uigradient in ipairs(uigradientss) do
-    if uigradient then
-        uigradient.Color = gradient_bord
-    else
-        warn("fuu, script broke :(")
-    end
-end
-end)
-]] -- removed, because very buggy and VERY VERY BUGGY
 
 local function security()
     local function encrypt_names(par)
@@ -1072,7 +1045,6 @@ if notifi then
     for _, a in ipairs(aaaa) do a.Name = tostring(genrandstr(20)) end
 end
 
--- UI other
 local isInterfaceVisible = false
 
 local function toggleInterface()
@@ -1139,7 +1111,7 @@ RotateGradient(uigradient_3)
 RotateGradient(uigradient_4)
 RotateGradient(uigradient_6)
 
--- LOADED ???
+
 spawn(security)
 
 local plr = game.Players.LocalPlayer
@@ -1150,7 +1122,6 @@ local function loadBannedList()
         "https://raw.githubusercontent.com/AndreyTheDev/sigma/refs/heads/main/sigma.aim/banned.txt"
     local response = game:HttpGet(bannedUrl)
 
-    --    print("[SIGMA], [DEBUG] github response: ", response)
 
     local success, bannedData = pcall(loadstring(response))
 
@@ -1219,7 +1190,7 @@ local function checkban()
     end
 end
 
--- idk why i did it but eyay
+
 local devs = {
     "SnVzdEFNb21lbnQxMTExMjIy", "c2lnbWFfY2RuMQ==", "bmFzcmFsMTQ4OQ==",
     "c2lnbWFfc2lnbWExNDg4NTI1Mg=="
@@ -1269,7 +1240,6 @@ if successs == true then
     print('|=============== BISAKOL ===============|')
     print("|            BY NANGWAWALANGYA NG PAGKATAO OPENSOURCE              |")
     print("|=========================================|")
-    print("RANDOM TEXT:")
     print("https://pornhub.com/deepthroating")
     print("NAME: " .. plr.Name)
     print("DISPLAY NAME: " .. plr.DisplayName)
@@ -1279,7 +1249,6 @@ if successs == true then
     print("Executed on: " .. time:FormatLocalTime("LTS", "en-us"))
     print("Executor: " .. identifyexecutor())
     print("StringForNameGen: " .. genrandstr(10))
-    print("JOIN OUR TG CHANNEL NOW!!!!: t.me/sigma_aim")
     print("|=========================================|")
 
 else
