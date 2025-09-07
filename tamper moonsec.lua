@@ -11,5 +11,3 @@ end
 function ap(...)
 	print(...)
 end
-
---put your script here and use lua formatter i suggest you use luamin 
