@@ -50,7 +50,6 @@ local function storeGlobalDrawing(key, drawObj)
 end
 local function getGlobalDrawing(key) return GLOBAL._drawings[key] end
 
--- === SETTINGS ===
 local settings = {
 	-- ESP
 	espoverall = true,
@@ -62,21 +61,19 @@ local settings = {
 	espclaymore = true,
 	espclaymoreoutline = true,
 
-	-- AIMBOT
 	aimbotEnabled = true,
-	aimHoldToLock = true,                       -- hold key to aim; false -> toggle
+	aimHoldToLock = true,                      
 	aimKeyInputType = Enum.UserInputType.MouseButton2,
 	aimKeyCode = Enum.KeyCode.P,
-	aimSmoothnessPlayers = 0.95,                -- Players smoothness
-	aimSmoothnessDrones = 0.85,                 -- Drones smoothness  
-	aimSmoothnessClaymores = 0.85,                              -- 0 = crazy lock
-	fovRadius = 50,                             -- pixels
+	aimSmoothnessPlayers = 0.95,              
+	aimSmoothnessDrones = 0.85,                 
+	aimSmoothnessClaymores = 0.85,                            
+	fovRadius = 50,                          
 	drawFOV = false,
 	drawAimIndicator = true,
-	aimTargetPriority = {"Player","Claymore","Drone"},   --  priority order for aimbot target
+	aimTargetPriority = {"Player","Claymore","Drone"},  
 	aimOnlyWhenVisible = true,
 	
-	-- PERFORMANCE
 	espMaxDistance = 500,
 }
 GLOBAL.settings = settings
@@ -89,7 +86,6 @@ local function applySettings(new)
 		end
 	end
 
-	-- FOV circle
 	local fov = getGlobalDrawing("fovCircle")
 	local fovOut = getGlobalDrawing("fovCircleOutline")
 	if settings.drawFOV then
@@ -120,7 +116,6 @@ local function applySettings(new)
 		if fovOut then safeRemove(fovOut); GLOBAL._drawings["fovCircleOutline"] = nil end
 	end
 
-	-- Aim indicator
 	local aimInd = getGlobalDrawing("aimIndicator")
 	if settings.drawAimIndicator then
 		if not aimInd then
@@ -141,7 +136,6 @@ end
 GLOBAL.updateSettings = applySettings
 applySettings({}) 
 
--- === DRAWING TABLES FOR ENTITIES ===
 local espboxes = {}          
 local espboxoutlines = {}
 local espnames = {}
