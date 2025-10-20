@@ -2,6 +2,7 @@
 -- add esp for claymores.
 -- a,dd aimbot for Players, drones, claymores (OPTIONAL! can disable aimbot for drones/claymores if desired).
 -- aimbot uses bounding box center for aiming (more reliable than head/torso). im just suck at lua i cant find head at the moment and torso is buns. 
+borat
 ]]
 
 
